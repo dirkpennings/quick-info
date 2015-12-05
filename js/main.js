@@ -13,7 +13,7 @@
 		html += '<tr>';
 		html += '<td><input type="text" name="key_' + newTableRowIndex + '"></td>';
 		html += '<td><input type="text" name="value_' + newTableRowIndex + '"></td>';
-		html += '<td class="text--center"><a href="#"><i class="fa fa-minus-square fa-1x"></i></td>';
+		html += '<td class="remove text--center"><a href="#"><i class="fa fa-minus-square fa-1x"></i></td>';
 		html += '</tr>';
 
 		$tbody.append(html);
