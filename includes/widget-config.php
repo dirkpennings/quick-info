@@ -39,7 +39,7 @@
 			echo "<tr>";
 			echo "<td><input name=\"key_" . $i . "\" type=\"text\" value=\"" . stripslashes(htmlspecialchars($data["key_".$i])) . "\"></td>";
 			echo "<td><input name=\"value_" . $i . "\" type=\"text\" value=\"" . stripslashes(htmlspecialchars($data["value_".$i])) . "\"></td>";
-			echo "<td class=\"text--center\"><a href=\"#\" class=\"btn btn--remove-row\" data-row-index=\"".$i."\"><i class=\"fa fa-minus-square fa-1x\"></i></a></td>";
+			echo "<td class=\"remove text--center\"><a href=\"#\" class=\"btn btn--remove-row\" data-row-index=\"".$i."\"><i class=\"fa fa-minus-square fa-1x\"></i></a></td>";
 			echo "</tr>";
 		}
 	}
@@ -50,7 +50,7 @@
 		echo "<tr>";
 		echo "<td><input name=\"key_1\" type=\"text\"></td>";
 		echo "<td><input name=\"value_1\" type=\"text\"></td>";
-		echo "<td class=\"text--center\"><a href=\"#\" class=\"btn btn--remove-row\" data-row-index=\"1\"><i class=\"fa fa-minus-square fa-1x\"></i></a></td>";
+		echo "<td class=\"remove text--center\"><a href=\"#\" class=\"btn btn--remove-row\" data-row-index=\"1\"><i class=\"fa fa-minus-square fa-1x\"></i></a></td>";
 		echo "</tr>";
 	}
 
