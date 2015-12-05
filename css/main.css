@@ -1,0 +1,21 @@
+/*!
+ * Quick Info widget CSS
+ * Author: ;
+ */
+table { width: 100%; border-collapse: collapse; }
+table#form-table { border: 1px solid #ccc; }
+th { padding: 3px 5px; }
+td.text--center { text-align: center; }
+tr td:nth-child(2) { padding-right: 3px; }
+tr td:nth-child(1) { font-weight: bold; border-left: 0; }
+tr:nth-child(1) td { border-top: 0; }
+th { background-color: #ddd; text-align: left; }
+
+td input { width: 100%; }
+textarea { margin: 10px 0; }
+.text-right { text-align: right; }
+.btn { padding: 5px; display: inline-block; }
+
+.fa { margin-right: 5px; }
+td.remove .fa { margin: 0; }
+hr { border-bottom: 0; margin: 10px 0;  display: block; }
