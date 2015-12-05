@@ -14,4 +14,4 @@ Would you like to display your company info or any other details? Then this plug
 
 ### Other
 
-Special thanks to [Example Dashboard Widget](https://codex.wordpress.org/Example_Dashboard_Widget)
+Special thanks to [Example Dashboard Widget](https://codex.wordpress.org/Example_Dashboard_Widget) and [Font-Awesome](https://fortawesome.github.io/Font-Awesome)
