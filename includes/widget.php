@@ -1,9 +1,11 @@
 <?php
+	global $settings;
+
 	/**
 	 * get data from database
 	 * the true flag parameter in the json_decode function indicates it should return an array
 	 */
-	$data = json_decode(self::get_dashboard_widget_option(settings['id'], 'data'), true);
+	$data = json_decode(self::get_dashboard_widget_option($settings['id'], 'data'), true);
 
 	/**
 	 * Check if there is any data and if so, render the fields

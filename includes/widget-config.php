@@ -1,4 +1,6 @@
 <?php
+	global $settings, $translations;
+
 	/**
 	 * Check if the form is posted. If so, save posted data to the database.
 	 * Also filter out some default WordPress form fields
@@ -12,7 +14,7 @@
 		unset($data['submit']);
 
 		self::update_dashboard_widget_options(
-			settings['id'],
+			$settings['id'],
 			array(
 				'data' => json_encode($data)
 			)
@@ -23,10 +25,10 @@
 	 * get data from database
 	 * the true flag parameter in the json_decode function indicates it should return an array
 	 */
-	$data = json_decode(self::get_dashboard_widget_option(settings['id'], 'data'), true);
+	$data = json_decode(self::get_dashboard_widget_option($settings['id'], 'data'), true);
 
 	echo "<table id=\"form-table\">";
-	echo "<thead><tr><th>" . translations['key'] . "</th><th colspan=\"2\">" . translations['value'] . "</th></tr></thead>";
+	echo "<thead><tr><th>" . $translations['key'] . "</th><th colspan=\"2\">" . $translations['value'] . "</th></tr></thead>";
 	echo "<tbody>";
 
 	/**
@@ -60,7 +62,7 @@
 	/**
 	 * Render button to add a new table row with input fields
 	 */
-	echo "<div class=\"text-right\"><a href=\"#\" class=\"btn btn--add-row\"><i class=\"fa fa-plus-square fa-1x\"></i>" . translations['add_another_row'] . "</a></div>";
+	echo "<div class=\"text-right\"><a href=\"#\" class=\"btn btn--add-row\"><i class=\"fa fa-plus-square fa-1x\"></i>" . $translations['add_another_row'] . "</a></div>";
 
 ?>
 

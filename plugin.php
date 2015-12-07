@@ -8,11 +8,10 @@
  * Plugin URI: https://github.com/dirkpennings/quick-info
  */
 
-
 /**
  * Translations array (maybe a future update will contain translation files)
  */
-const translations = array(
+$translations = array(
     "add_another_row" => "Add another row",
     "key" => "Key",
     "value" => "Value",
@@ -22,7 +21,7 @@ const translations = array(
 /**
  * Settings array
  */
-const settings = array(
+$settings = array(
     'id' => 'quick_info_widget',
     'version' => '0.1',
     'css' => array(
@@ -52,8 +51,10 @@ class QuickInfoWidget {
 	 */
 	public static function load_dashboard_css()
 	{
-		foreach(settings['css'] as $css) {
-			wp_register_style( $css['id'], plugins_url( $css['url'], __FILE__ ), array(), settings['version'], 'all' );
+        global $settings;
+
+		foreach($settings['css'] as $css) {
+			wp_register_style( $css['id'], plugins_url( $css['url'], __FILE__ ), array(), $settings['version'], 'all' );
 		    wp_enqueue_style( $css['id'] );
 		}
 	}
@@ -65,8 +66,10 @@ class QuickInfoWidget {
 	 */
 	public static function load_dashboard_js()
 	{
-		foreach(settings['js'] as $js) {
-			wp_register_script( $js['id'], plugins_url( $js['url'], __FILE__ ), array(), settings['version'], 'all' );
+        global $settings;
+
+		foreach($settings['js'] as $js) {
+			wp_register_script( $js['id'], plugins_url( $js['url'], __FILE__ ), array(), $settings['version'], 'all' );
 		    wp_enqueue_script( $js['id'] );
 		}
 	}
@@ -77,19 +80,14 @@ class QuickInfoWidget {
 	 * This function is hooked into the 'wp_dashboard_setup' action below.
 	 */
 	public static function add_dashboard_widgets() {
+        global $settings, $translations;
+
 		wp_add_dashboard_widget(
-			settings['id'],
-			translations['widget_title'],
+			$settings['id'],
+			$translations['widget_title'],
 			array('QuickInfoWidget','widget'),
 			array('QuickInfoWidget','config')
 		);
-	}
-
-	/**
-	 * Create the function to output the contents of our Dashboard Widget.
-	 */
-	public static function dashboard_widget_callback() {
-		echo settings['description'];
 	}
 
     /**
