@@ -8,41 +8,42 @@
  * Plugin URI: https://github.com/dirkpennings/quick-info
  */
 
+
+/**
+ * Translations array (maybe a future update will contain translation files)
+ */
+const translations = array(
+    "add_another_row" => "Add another row",
+    "key" => "Key",
+    "value" => "Value",
+    "widget_title" => "Quick Info"
+);
+
+/**
+ * Settings array
+ */
+const settings = array(
+    'id' => 'quick_info_widget',
+    'version' => '0.1',
+    'css' => array(
+        array(
+            'id' => 'custom-style',
+            'url' => '/css/main.css'
+        ),
+        array(
+            'id' => 'font-awesome',
+            'url' => '/css/font-awesome.min.css'
+        )
+    ),
+    'js' => array(
+        array(
+            'id' => 'custom-script',
+            'url' => '/js/main.js'
+        )
+    )
+);
+
 class QuickInfoWidget {
-
-	/**
-	 * Translations array (maybe a future update will contain translation files)
-	 */
-	const translations = array(
-		"add_another_row" => "Add another row",
-		"key" => "Key",
-		"value" => "Value",
-		"widget_title" => "Quick Info"
-	);
-
-	/**
-	 * Settings array
-	 */
-	const settings = array(
-		'id' => 'quick_info_widget',
-		'version' => '0.1',
-		'css' => array(
-			array(
-				'id' => 'custom-style',
-				'url' => '/css/main.css'
-			),
-			array(
-				'id' => 'font-awesome',
-				'url' => '/css/font-awesome.min.css'
-			)
-		),
-		'js' => array(
-			array(
-				'id' => 'custom-script',
-				'url' => '/js/main.js'
-			)
-		)
-	);
 
 	/**
 	 * Adds the styling for the dashboard widget.
@@ -51,8 +52,8 @@ class QuickInfoWidget {
 	 */
 	public static function load_dashboard_css()
 	{
-		foreach(self::settings['css'] as $css) {
-			wp_register_style( $css['id'], plugins_url( $css['url'], __FILE__ ), array(), self::settings['version'], 'all' );
+		foreach(settings['css'] as $css) {
+			wp_register_style( $css['id'], plugins_url( $css['url'], __FILE__ ), array(), settings['version'], 'all' );
 		    wp_enqueue_style( $css['id'] );
 		}
 	}
@@ -64,8 +65,8 @@ class QuickInfoWidget {
 	 */
 	public static function load_dashboard_js()
 	{
-		foreach(self::settings['js'] as $js) {
-			wp_register_script( $js['id'], plugins_url( $js['url'], __FILE__ ), array(), self::settings['version'], 'all' );
+		foreach(settings['js'] as $js) {
+			wp_register_script( $js['id'], plugins_url( $js['url'], __FILE__ ), array(), settings['version'], 'all' );
 		    wp_enqueue_script( $js['id'] );
 		}
 	}
@@ -77,8 +78,8 @@ class QuickInfoWidget {
 	 */
 	public static function add_dashboard_widgets() {
 		wp_add_dashboard_widget(
-			self::settings['id'],
-			self::translations['widget_title'],
+			settings['id'],
+			translations['widget_title'],
 			array('QuickInfoWidget','widget'),
 			array('QuickInfoWidget','config')
 		);
@@ -88,7 +89,7 @@ class QuickInfoWidget {
 	 * Create the function to output the contents of our Dashboard Widget.
 	 */
 	public static function dashboard_widget_callback() {
-		echo self::settings['description'];
+		echo settings['description'];
 	}
 
     /**
