@@ -1,21 +1,20 @@
 /*!
  * Quick Info widget CSS
- * Author: ;
+ * Author: Dirk Pennings<dirkpennings@gmail.com>
  */
-table { width: 100%; border-collapse: collapse; }
-table#form-table { border: 1px solid #ccc; }
-th { padding: 3px 5px; }
-td.text--center { text-align: center; }
-tr td:nth-child(2) { padding-right: 3px; }
-tr td:nth-child(1) { font-weight: bold; border-left: 0; }
-tr:nth-child(1) td { border-top: 0; }
-th { background-color: #ddd; text-align: left; }
+.quick-info table { width: 100%; border-collapse: collapse; }
+.quick-info table#form-table { border: 1px solid #ccc; }
+.quick-info th { padding: 3px 5px; }
+.quick-info td.text--center { text-align: center; }
+.quick-info tr td:nth-child(2) { padding-right: 3px; }
+.quick-info tr td:nth-child(1) { font-weight: bold; border-left: 0; }
+.quick-info tr:nth-child(1) td { border-top: 0; }
+.quick-info th { background-color: #ddd; text-align: left; }
 
-td input { width: 100%; }
-textarea { margin: 10px 0; }
-.text-right { text-align: right; }
-.btn { padding: 5px; display: inline-block; }
+.quick-info td input { width: 100%; }
+.quick-info .text--right { text-align: right; }
+.quick-info .btn { padding: 5px; display: inline-block; }
 
-.fa { margin-right: 5px; }
-td.remove .fa { margin: 0; }
-hr { border-bottom: 0; margin: 10px 0;  display: block; }
+.quick-info .fa { margin-right: 5px; }
+.quick-info td.remove .fa { margin: 0; }
+.quick-info hr { border-bottom: 0; margin: 10px 0;  display: block; }
