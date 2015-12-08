@@ -13,6 +13,7 @@
 	if(isset($data) && sizeof($data) > 0) {
 		$length = sizeof($data) / 2;
 
+		echo "<div class=\"quick-info\">";
 		echo "<table>";
 		for($i=1; $i<=$length; $i++) {
 			echo "<tr>";
@@ -21,6 +22,7 @@
 			echo "</tr>";
 		}
 		echo "</table>";
+		echo "</div>";
 	}
 
 	/**
