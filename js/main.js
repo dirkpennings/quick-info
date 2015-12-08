@@ -13,7 +13,7 @@
 		html += '<tr>';
 		html += '<td><input type="text" name="key_' + newTableRowIndex + '"></td>';
 		html += '<td><input type="text" name="value_' + newTableRowIndex + '"></td>';
-		html += '<td class="remove text--center"><a href="#"><i class="fa fa-minus-square fa-1x"></i></td>';
+		html += '<td class="remove text--center"><a href="#" class="btn btn--remove-row"><i class="fa fa-minus-square fa-1x"></i></td>';
 		html += '</tr>';
 
 		$tbody.append(html);
@@ -23,7 +23,7 @@
 	 * Delete row click handler
 	 * @param  {Event}	e	Click event
 	 */
-	$('.btn--remove-row').on('click', function(e) {
+	$('.quick-info').on('click', '.btn--remove-row', function(e) {
 		e.preventDefault();
 
 		var $tr = $(this).parents('tr');
